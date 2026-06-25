@@ -27,16 +27,15 @@ The objective is to analyze EV adoption trends, identify leading manufacturers, 
 ```text
 EVDataAnalysis/
 │
-├── data/
-│   ├── Electric_Vehicle_Population_Data.csv
-│   └── EV_population_cleaned.csv
+├── data/                         # Add dataset here (not included in repo)
+│   └── Electric_Vehicle_Population_Data.csv
 │
-├── outputs/
+├── outputs/                      # Auto-generated after running main.py
 │   ├── electric_range_histogram.png
 │   ├── vehicle_make_distribution.png
 │   ├── range_vs_msrp.png
 │   ├── correlation_heatmap.png
-│   └── top_counties.png
+│   └── top_countries.png
 │
 ├── src/
 │   ├── __init__.py
@@ -47,6 +46,7 @@ EVDataAnalysis/
 │
 ├── main.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
@@ -64,13 +64,28 @@ EVDataAnalysis/
 
 ## Dataset
 
-Electric Vehicle Population Dataset containing information about:
+This project uses the **Electric Vehicle Population Dataset** from Kaggle.
+
+> The dataset is not included in this repository. You must download it manually.
+
+Download it from:
+[Electric Vehicle Population Data – Kaggle](https://www.kaggle.com/datasets/ratikkakkar/electric-vehicle-population-data)
+
+After downloading, place the file inside the `data/` folder:
+
+```text
+EVDataAnalysis/
+└── data/
+    └── Electric_Vehicle_Population_Data.csv
+```
+
+The dataset contains information about:
 
 * Vehicle Make
 * Vehicle Model
 * Electric Range
 * Base MSRP
-* County
+* Country
 * Legislative District
 * Vehicle Type
 
@@ -95,7 +110,7 @@ Electric Vehicle Population Dataset containing information about:
 * Average electric range
 * Median electric range
 * Top vehicle manufacturers
-* Top counties by EV adoption
+* Top countries by EV adoption
 
 ### Visualizations
 
@@ -117,9 +132,10 @@ Shows correlations among numerical variables.
 
 #### Top Countries by EV Adoption
 
-Highlights counties with the highest EV registrations.
+Highlights countries with the highest EV registrations.
 
 ---
+
 ## Sample Visualizations
 
 ### Project Structure
@@ -146,9 +162,9 @@ Highlights counties with the highest EV registrations.
 
 ![Correlation Heatmap](outputs/correlation_heatmap.png)
 
-### Top Counties by EV Adoption
+### Top Countries by EV Adoption
 
-![Top Counties](outputs/top_countries.png)
+![Top Countries](outputs/top_countries.png)
 
 ---
 
@@ -172,6 +188,8 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+Download the dataset from [Kaggle](https://www.kaggle.com/datasets/ratikkakkar/electric-vehicle-population-data) and place it in the `data/` folder.
+
 ---
 
 ## Running the Project
@@ -182,25 +200,30 @@ Execute:
 python main.py
 ```
 
-Generated visualizations will be stored inside the outputs folder.
+Generated visualizations will be stored inside the `outputs/` folder.
 
 ---
 
 ## Sample Output
 
 ```text
-===== DATASET SUMMARY =====
+========================================
+EV DATASET SUMMARY
+========================================
+Total Records        : 261698
+Total Columns        : 17
+Average EV Range     : 42.61 miles
+Median EV Range      : 0.00 miles
+Maximum EV Range     : 337.00 miles
+Minimum EV Range     : 0.00 miles
 
-Rows: 261698
-Columns: 17
-
-Average Electric Range: 42.61
-Median Electric Range: 0.00
-
-Top 10 Vehicle Manufacturers:
-TESLA
-CHEVROLET
-NISSAN
+Top 10 Vehicle Manufacturers
+----------------------------------------
+TESLA        108777
+CHEVROLET     18908
+NISSAN        16224
+FORD          13988
+KIA           12849
 ...
 ```
 
