@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# Data files
+data/Electric_Vehicle_Population_Data.csv
+data/EV_population_cleaned.csv
+
+# IDE
+.vscode/
+.idea/
